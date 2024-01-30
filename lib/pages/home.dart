@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../shared/left_menu.dart';
 import '../style/colors.dart';
+import 'dart:developer';
+import 'dart:js';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,18 +15,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   static final List _body = [
-    /*  Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Icon(
-          Icons.home,
-          size: 55.0,
-        ),
-      ),
-    ), */
     const HomeButtons(),
     const Icon(
       Icons.list,
@@ -75,28 +65,6 @@ class _HomePageState extends State<HomePage> {
       /* drawer: const LeftMenu(), */
       body: Center(
         child: _body.elementAt(currentIndex),
-        /* child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Column(
-          children: [
-            Text(
-              dtHelper.toDeDateTimeStr(DateTime.now())['date'],
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, letterSpacing: 3.0),
-            ),
-            Text(dtHelper.toDeDateTimeStr(DateTime.now())['time'],
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, letterSpacing: 3.0))
-          ],
-        ),
-        const SizedBox(
-          height: 13.0,
-        ),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(),
-          onPressed: () {},
-          child: const Text('TAP ME'),
-        )
-      ]) */
       ),
       /* bottomNavigationBar: const BottomNavBar(), */
       drawer: const LeftMenu(),
@@ -104,8 +72,8 @@ class _HomePageState extends State<HomePage> {
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
           // NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.list), label: 'List'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'User')
+          NavigationDestination(icon: Icon(Icons.add), label: 'Add'),
+          NavigationDestination(icon: Icon(Icons.list), label: 'List')
         ],
         selectedIndex: currentIndex,
         onDestinationSelected: (int index) {
@@ -131,16 +99,16 @@ class HomeButtons extends StatelessWidget {
           height: 55.0,
           margin: const EdgeInsets.only(bottom: 5.0, top: 5.0),
           child: ElevatedButton(
-              onPressed: () => context.push('/inventory-list'),
-              child: const Text('Inventory')),
+              onPressed: () => debugPrint('Tapped button #1'),
+              child: const Text('#1')),
         ),
         Container(
           width: MediaQuery.of(context).size.width * 0.8,
           height: 55.0,
           margin: const EdgeInsets.only(bottom: 5.0, top: 5.0),
           child: ElevatedButton(
-              onPressed: () => context.push('/sales-list'),
-              child: const Text('Sales')),
+              onPressed: () => debugPrint('Tapped button #2'),
+              child: const Text('#2')),
         ),
       ],
     );

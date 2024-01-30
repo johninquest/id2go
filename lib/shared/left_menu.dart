@@ -39,39 +39,6 @@ class _LeftMenuState extends State<LeftMenu> {
                 )),
             ListTile(
               leading: const Icon(
-                Icons.inventory_outlined,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Inventory',
-              ),
-              /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
-              onTap: () => context.push('/inventory-list'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.receipt_long_outlined,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Invoices',
-              ),
-              /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
-              onTap: () => context.push('/inventory-list'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.point_of_sale_outlined,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Sales',
-              ),
-              /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
-              onTap: () => context.push('/sales-list'),
-            ),
-            ListTile(
-              leading: const Icon(
                 Icons.person_outline,
                 color: primaryColor,
               ),
@@ -81,34 +48,6 @@ class _LeftMenuState extends State<LeftMenu> {
               /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
               onTap: () => context.push('/user'),
             ),
-            /* ListTile(
-              leading: const Icon(
-                Icons.manage_accounts,
-                color: primaryColor,
-              ),
-              title: const Text('Assets'),
-              onTap: () => log('Tapped 2'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.build,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Liabilities',
-              ),
-              onTap: () => log('Tapped 3'),
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.account_balance_wallet,
-                color: primaryColor,
-              ),
-              title: const Text(
-                'Net worth',
-              ),
-              onTap: () => context.push('/networth'),
-            ), */
             ListTile(
               leading: const Icon(
                 Icons.info_outline,
@@ -119,7 +58,7 @@ class _LeftMenuState extends State<LeftMenu> {
               ),
               onTap: () => context.push('/info'),
             ),
-            ListTile(
+            /*  ListTile(
               leading: const Icon(
                 Icons.save_outlined,
                 color: primaryColor,
@@ -128,7 +67,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 'Storage',
               ),
               onTap: () => context.push('/storage'),
-            ),
+            ), */
           ],
         ),
       ),

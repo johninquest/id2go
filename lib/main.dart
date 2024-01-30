@@ -9,7 +9,6 @@ import '../../pages/storage.dart';
 import '../../pages/auth.dart';
 import '../../pages/inventory/inventory_list.dart';
 import '../../pages/sales/sales_list.dart';
-/* import '../../pages/home.dart'; */
 import '../../style/colors.dart';
 
 void main() {

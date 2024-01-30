@@ -13,7 +13,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'POS App',
+          'Id2Go',
           style: TextStyle(color: primaryColor, letterSpacing: 1.0),
         ),
         centerTitle: true,
@@ -26,7 +26,7 @@ class AuthPage extends StatelessWidget {
           children: [
             Container(
                 margin: const EdgeInsets.only(bottom: 13.0),
-                child: const Text('A simple POS app',
+                child: const Text('A simple wallet for your IDs and numbers',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         wordSpacing: 5.0,
