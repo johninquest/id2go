@@ -13,7 +13,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Id2Go',
+          'IDWallet',
           style: TextStyle(color: primaryColor, letterSpacing: 1.0),
         ),
         centerTitle: true,

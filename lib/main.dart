@@ -3,12 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
-import '../../pages/user/user.dart';
+import 'pages/user/user_details.dart';
 import '../../pages/user/user_create.dart';
 import '../../pages/storage.dart';
 import '../../pages/auth.dart';
-import '../../pages/inventory/inventory_list.dart';
-import '../../pages/sales/sales_list.dart';
 import '../../style/colors.dart';
 
 void main() {
@@ -54,14 +52,6 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: '/user-create',
       builder: (context, state) => const UserCreatePage(),
-    ),
-    GoRoute(
-      path: '/inventory-list',
-      builder: (context, state) => const InventoryListPage(),
-    ),
-    GoRoute(
-      path: '/sales-list',
-      builder: (context, state) => const SalesListPage(),
     ),
     GoRoute(
       path: '/storage',

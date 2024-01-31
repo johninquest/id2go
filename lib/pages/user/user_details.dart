@@ -10,7 +10,10 @@ class UserPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('User'),
+        title: const Text(
+          'Personal info',
+          style: TextStyle(fontSize: 13.0),
+        ),
         centerTitle: true,
       ),
       body: const Center(

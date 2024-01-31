@@ -1,4 +1,4 @@
-name: id2go
+name: idwallet
 description: A simple app for storing your IDs and numbers while on the go.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

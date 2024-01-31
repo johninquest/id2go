@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:idwallet/pages/ids/id_create.dart';
+import 'package:idwallet/pages/ids/id_list.dart';
 import '../../shared/left_menu.dart';
 import '../style/colors.dart';
-import 'dart:developer';
-import 'dart:js';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,11 +16,11 @@ class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   static final List _body = [
     const HomeButtons(),
-    const Icon(
+    /*  const Icon(
       Icons.list,
       size: 55.0,
-    ),
-    Scaffold(
+    ), */
+/*     Scaffold(
       appBar: AppBar(
         title: const Text('User'),
         centerTitle: true,
@@ -31,7 +31,9 @@ class _HomePageState extends State<HomePage> {
           size: 55.0,
         ),
       ),
-    ),
+    ), */
+    const IdCreate(),
+    const IdList(),
   ];
 
   @override
