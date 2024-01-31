@@ -1,15 +1,14 @@
-<h3 align="center">posa<h3>
+<h3 align="center">ID Wallet<h3>
 
-<p align="center">A simple mobile-first point-of-sale app built with Flutter</p>
+<p align="center">A simple ID wallet app built with Flutter</p>
 
 ## Feature roadmap
 
 - User-friendly interface
 - Offline capability
-- Inventory management ?
-- Payment processing ?
-- Sales tracking
-- Receipts & invoices
+- Enter and store IDs
+- Display stored IDs
+- Implement auth
 
 <!-- This project is a starting point for a Flutter application.
 
