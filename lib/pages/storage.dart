@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 class StorageSettingPage extends StatelessWidget {
   const StorageSettingPage({super.key});
@@ -38,7 +37,7 @@ class _StorageTypeSwitchState extends State<StorageTypeSwitch> {
               value: isSwitched,
               onChanged: (value) {
                 setState(() {
-                  log('Selected value: $value');
+                  debugPrint('Selected value: $value');
                   isSwitched = value;
                 });
               }),

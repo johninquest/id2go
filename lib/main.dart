@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:idwallet/pages/ids/id_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import 'pages/user/user_details.dart';
@@ -44,6 +45,10 @@ class MyApp extends StatelessWidget {
     GoRoute(
       path: '/info',
       builder: (context, state) => const AppInfoPage(),
+    ),
+    GoRoute(
+      path: '/id-list',
+      builder: (context, state) => const IdList(),
     ),
     GoRoute(
       path: '/user',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:idwallet/pages/ids/id_create.dart';
-import 'package:idwallet/pages/ids/id_list.dart';
+import '/pages/ids/id_create.dart';
+import '/pages/ids/id_list.dart';
 import '../../shared/left_menu.dart';
 import '../style/colors.dart';
 
