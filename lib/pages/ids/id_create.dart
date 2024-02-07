@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 import '/shared/id_categories.dart';
 import '/style/colors.dart';
 
@@ -85,7 +85,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       items: typesOfIds.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(value),
+                          child: Text(value.toUpperCase()),
                         );
                       }).toList(),
 
