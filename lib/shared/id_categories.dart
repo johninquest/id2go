@@ -1,4 +1,4 @@
-const List<String> ID_CATEGORIES_LIST = [
+const List<String> idCategoryList = [
   '',
   'personal',
   'national',
@@ -14,6 +14,7 @@ const List<String> ID_CATEGORIES_LIST = [
   'drivers',
   'credit card',
   'debit card',
-  'banking',
-  'other'
+  'bank',
+  'work',
+  'other',
 ];

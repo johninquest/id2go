@@ -11,8 +11,7 @@ class UserPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Personal info',
-          style: TextStyle(fontSize: 13.0),
+          'User Info',
         ),
         centerTitle: true,
       ),
@@ -33,32 +32,77 @@ class UserInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [UserInfoRow()]);
+        children: [
+          const UserInfoRow(
+            fieldTitle: 'First name',
+            fieldValue: 'Mike',
+          ),
+          const Divider(
+            indent: 89.0,
+            endIndent: 89.0,
+          ),
+          const UserInfoRow(
+            fieldTitle: 'Last name',
+            fieldValue: 'Xaver',
+          ),
+          const SizedBox(
+            height: 8.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child: ElevatedButton(
+                  onPressed: () => debugPrint('Tapped delete button'),
+                  style: ElevatedButton.styleFrom(),
+                  child: const Text(
+                    'delete',
+                    style: TextStyle(color: txtBlackColor),
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                child: ElevatedButton(
+                  onPressed: () => debugPrint('Tapped edit button'),
+                  child: const Text('edit'),
+                ),
+              )
+            ],
+          )
+        ]);
   }
 }
 
 class UserInfoRow extends StatelessWidget {
-  const UserInfoRow({super.key});
+  const UserInfoRow({
+    super.key,
+    required this.fieldTitle,
+    required this.fieldValue,
+  });
+  final String fieldTitle;
+  final String fieldValue;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      // crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(right: 13.0),
-          child: const Text(
-            'First name',
-            style: TextStyle(color: primaryColor),
+          margin: const EdgeInsets.only(right: 21.0, bottom: 5.0),
+          child: Text(
+            fieldTitle,
+            style: const TextStyle(color: primaryColor),
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 13.0),
-          child: const Text('Xaver'),
+          margin: const EdgeInsets.only(left: 21.0),
+          child: Text(fieldValue),
         )
       ],
     );

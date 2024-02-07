@@ -67,7 +67,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
 
   @override
   Widget build(BuildContext context) {
-    const idCategoryList = ID_CATEGORIES_LIST;
+    const typesOfIds = idCategoryList;
+    typesOfIds.toList().sort();
     return Form(
         key: idCreateFormKey,
         child: SingleChildScrollView(
@@ -81,7 +82,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: DropdownButtonFormField(
                       decoration: const InputDecoration(labelText: 'Category'),
                       // items: DataAsList().taskListItems,
-                      items: idCategoryList.map((String value) {
+                      items: typesOfIds.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
