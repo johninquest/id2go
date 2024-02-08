@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-// import '../../pages/home.dart';
 import '../../style/colors.dart';
-// import '../../utils/router.dart';
-// import 'dart:developer';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -45,7 +42,8 @@ class AuthPage extends StatelessWidget {
             ), */
             ElevatedButton(
               onPressed: () => context.go('/home'),
-              child: const Icon(Icons.home),
+              // child: const Icon(Icons.home),
+              child: Text('start'.toUpperCase()),
             )
           ],
         ),

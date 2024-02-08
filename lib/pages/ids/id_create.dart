@@ -23,10 +23,12 @@ class IdCreateForm extends StatefulWidget {
 
 class _IdCreateFormState extends State<IdCreateForm> {
   final idCreateFormKey = GlobalKey<FormState>();
-  String? categoryName;
+  String? idType;
   final TextEditingController idName = TextEditingController();
   final TextEditingController idNumber = TextEditingController();
-  final TextEditingController idDesc = TextEditingController();
+  final TextEditingController idValidFrom = TextEditingController();
+  final TextEditingController idValidTo = TextEditingController();
+  final TextEditingController idComment = TextEditingController();
 /*   TextEditingController _startDate = TextEditingController();
   TextEditingController _endDate = TextEditingController(); */
   // TextEditingController _estimatedHours = TextEditingController();
@@ -68,7 +70,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
   @override
   Widget build(BuildContext context) {
     const typesOfIds = idCategoryList;
-    typesOfIds.toList().sort();
+    /* typesOfIds.toList().sort(); */
     return Form(
         key: idCreateFormKey,
         child: SingleChildScrollView(
@@ -77,25 +79,25 @@ class _IdCreateFormState extends State<IdCreateForm> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
-                      decoration: const InputDecoration(labelText: 'Category'),
+                      decoration: const InputDecoration(labelText: 'ID type'),
                       // items: DataAsList().taskListItems,
                       items: typesOfIds.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(value.toUpperCase()),
+                          child: Text(value),
                         );
                       }).toList(),
 
-                      validator: (val) => val == null ? 'ID category ?' : null,
+                      validator: (val) => val == null ? 'ID type ?' : null,
                       onChanged: (val) => setState(() {
-                        categoryName = val as String;
+                        idType = val as String;
                       }),
                     )),
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     margin: const EdgeInsets.only(bottom: 10.0),
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
@@ -111,7 +113,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       },
                     )),
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     margin: const EdgeInsets.only(bottom: 10.0),
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
@@ -126,14 +128,52 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         return null;
                       },
                     )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        margin: const EdgeInsets.only(bottom: 10.0),
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                        child: TextFormField(
+                          controller: idValidFrom,
+                          decoration:
+                              const InputDecoration(labelText: 'Valid from'),
+                          keyboardType: TextInputType.text,
+                          textCapitalization: TextCapitalization.sentences,
+                          validator: (val) {
+                            if (val == null || val.isEmpty) {
+                              return 'Valid from ?';
+                            }
+                            return null;
+                          },
+                        )),
+                    Container(
+                        width: MediaQuery.of(context).size.width * 0.45,
+                        margin: const EdgeInsets.only(bottom: 10.0),
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                        child: TextFormField(
+                          controller: idValidTo,
+                          decoration:
+                              const InputDecoration(labelText: 'Valid to'),
+                          keyboardType: TextInputType.text,
+                          textCapitalization: TextCapitalization.sentences,
+                          validator: (val) {
+                            if (val == null || val.isEmpty) {
+                              return 'Valid to ?';
+                            }
+                            return null;
+                          },
+                        )),
+                  ],
+                ),
                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
+                    width: MediaQuery.of(context).size.width * 0.9,
                     margin: const EdgeInsets.only(bottom: 10.0),
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
-                      controller: idDesc,
-                      decoration:
-                          const InputDecoration(labelText: 'Description'),
+                      controller: idComment,
+                      decoration: const InputDecoration(labelText: 'Comment'),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       maxLines: 2,
