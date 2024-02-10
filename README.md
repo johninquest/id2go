@@ -26,3 +26,8 @@ How to add firebase to fultter -> https://github.com/firebase/flutterfire?tab=re
 -->
 
 ## Other notes
+
+### How to add firebase to flutter
+
+- [Get to know Firebase for Flutter](https://firebase.google.com/codelabs/firebase-get-to-know-flutter)
+- [FlutterFire Github Page](https://github.com/firebase/flutterfire?tab=readme-ov-file)
