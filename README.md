@@ -1,6 +1,6 @@
-<h3 align="center">ID Wallet<h3>
+<h3 align="center">MyIDs<h3>
 
-<p align="center">A simple ID wallet app built with Flutter</p>
+<p align="center">A digital wallet for your IDs and numbers while on the go, built with Flutter</p>
 
 ## Feature roadmap
 
@@ -10,7 +10,8 @@
 - Display stored IDs
 - Implement auth
 
-<!-- This project is a starting point for a Flutter application.
+<!--
+This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -20,6 +21,8 @@ A few resources to get you started if this is your first Flutter project:
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference. -->
+samples, guidance on mobile development, and a full API reference.
+How to add firebase to fultter -> https://github.com/firebase/flutterfire?tab=readme-ov-file
+-->
 
 ## Other notes
