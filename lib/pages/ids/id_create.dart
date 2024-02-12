@@ -69,7 +69,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
 
   @override
   Widget build(BuildContext context) {
-    const typesOfIds = idCategoryList;
+    const typesOfIds = idnCategory;
     /* typesOfIds.toList().sort(); */
     return Form(
         key: idCreateFormKey,
