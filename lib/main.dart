@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:idwallet/pages/ids/id_list.dart';
+import 'pages/idns/idn_list.dart';
 import '../../pages/home.dart';
 import '../../pages/info.dart';
 import 'pages/user/user_details.dart';
