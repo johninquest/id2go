@@ -211,7 +211,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         onPressed: () => debugPrint('Tapped cancel button'),
                         style: ElevatedButton.styleFrom(),
                         child: const Text(
-                          'cancel',
+                          'CANCEL',
                           style: TextStyle(color: txtBlackColor),
                         ),
                       ),
@@ -223,7 +223,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           debugPrint('Tapped save button');
                         },
                         child: const Text(
-                          'save',
+                          'SAVE',
                         ),
                       ),
                     )

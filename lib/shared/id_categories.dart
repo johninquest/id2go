@@ -6,6 +6,7 @@ const List<String> idCategoryList = [
   'government',
   'health',
   'insurance',
+  'tax',
   'transport',
   'travel',
   'shopping',
