@@ -10,7 +10,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'MyIDs',
+          'GoID',
           style: TextStyle(color: primaryColor, letterSpacing: 1.0),
         ),
         centerTitle: true,
@@ -22,12 +22,16 @@ class AuthPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                margin: const EdgeInsets.only(bottom: 13.0),
-                child: const Text('Your IDs, always with you!',
+                margin:
+                    const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
+                child: const Text(
+                    'Pocket your IDs and important numbers, unlock your freedom!',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        wordSpacing: 5.0,
-                        letterSpacing: 1.0))),
+                      fontWeight: FontWeight.bold,
+                      wordSpacing: 5.0,
+                      letterSpacing: 1.0,
+                    ))),
             const SizedBox(
               height: 13.0,
             ),

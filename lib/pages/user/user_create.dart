@@ -30,6 +30,7 @@ class _NewUserFormState extends State<NewUserForm> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController dateOfBirth = TextEditingController();
+  final TextEditingController countryName = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +69,17 @@ class _NewUserFormState extends State<NewUserForm> {
                   controller: dateOfBirth,
                   enabled: true,
                   decoration: const InputDecoration(labelText: 'Date of birth'),
+                  keyboardType: TextInputType.text,
+                  textCapitalization: TextCapitalization.words,
+                )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.89,
+                margin: const EdgeInsets.only(bottom: 5.0),
+                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                child: TextFormField(
+                  controller: countryName,
+                  enabled: true,
+                  decoration: const InputDecoration(labelText: 'Country'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
                 )),

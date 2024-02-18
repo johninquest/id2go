@@ -8,8 +8,9 @@ class IdCreate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: IdCreateForm(),
+    return Scaffold(
+      appBar: AppBar(),
+      body: const IdCreateForm(),
     );
   }
 }
@@ -23,6 +24,7 @@ class IdCreateForm extends StatefulWidget {
 
 class _IdCreateFormState extends State<IdCreateForm> {
   final idCreateFormKey = GlobalKey<FormState>();
+  String? idCategory;
   String? idType;
   final TextEditingController idName = TextEditingController();
   final TextEditingController idNumber = TextEditingController();
@@ -70,7 +72,6 @@ class _IdCreateFormState extends State<IdCreateForm> {
   @override
   Widget build(BuildContext context) {
     const typesOfIds = idnCategory;
-    /* typesOfIds.toList().sort(); */
     return Form(
         key: idCreateFormKey,
         child: SingleChildScrollView(
@@ -82,7 +83,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
-                      decoration: const InputDecoration(labelText: 'ID type'),
+                      decoration:
+                          const InputDecoration(labelText: 'ID Category'),
                       // items: DataAsList().taskListItems,
                       items: typesOfIds.map((String value) {
                         return DropdownMenuItem<String>(
@@ -91,7 +93,25 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         );
                       }).toList(),
 
-                      validator: (val) => val == null ? 'ID type ?' : null,
+                      validator: (val) => val == null ? 'ID category ?' : null,
+                      onChanged: (val) => setState(() {
+                        idType = val as String;
+                      }),
+                    )),
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                    child: DropdownButtonFormField(
+                      decoration: const InputDecoration(labelText: 'ID Type'),
+                      // items: DataAsList().taskListItems,
+                      items: [''].map((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Text(value),
+                        );
+                      }).toList(),
+
+                      validator: (val) => val == null ? 'ID Type ?' : null,
                       onChanged: (val) => setState(() {
                         idType = val as String;
                       }),
@@ -102,7 +122,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idName,
-                      decoration: const InputDecoration(labelText: 'ID name'),
+                      decoration: const InputDecoration(labelText: 'ID Name'),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
@@ -118,7 +138,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idNumber,
-                      decoration: const InputDecoration(labelText: 'ID number'),
+                      decoration: const InputDecoration(labelText: 'ID Number'),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
