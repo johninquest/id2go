@@ -29,6 +29,7 @@ const List<String> idnCategory = [
   'government',
   'health',
   'insurance',
+  'official',
   'professional',
   'subscription',
   'travel',
@@ -40,18 +41,6 @@ const List<String> idSubCategoryFinancial = [
   'bank account',
   'credit card',
   'debit card',
-  'insurance',
-  'professional',
-  'subscription',
-  'travel',
-  'utilities'
-];
-
-const List<String> countryList = [
-  '',
-  'financial',
-  'government',
-  'health',
   'insurance',
   'professional',
   'subscription',
