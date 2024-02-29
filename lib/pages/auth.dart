@@ -24,14 +24,14 @@ class AuthPage extends StatelessWidget {
             Container(
                 margin:
                     const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
-                child: const Text(
-                    'Pocket your IDs and important numbers, unlock your freedom!',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      wordSpacing: 5.0,
-                      letterSpacing: 1.0,
-                    ))),
+                child:
+                    const Text('Pocket your ID numbers, unlock your freedom!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          wordSpacing: 5.0,
+                          letterSpacing: 1.0,
+                        ))),
             const SizedBox(
               height: 13.0,
             ),
