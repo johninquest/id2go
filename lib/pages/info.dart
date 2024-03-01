@@ -7,6 +7,9 @@ class AppInfoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Locale appLocale = Localizations.localeOf(context);
+    final String languageCode = appLocale.languageCode;
+    debugPrint('Languade code: $languageCode');
     return Scaffold(
       appBar: AppBar(
         /* iconTheme: const IconThemeData(color: textWhiteColor),
@@ -16,8 +19,15 @@ class AppInfoPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: const Center(
-        child: VersionInfo(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const VersionInfo(),
+          const SizedBox(
+            height: 8.0,
+          ),
+          Text('deviceLanguageCode: $languageCode')
+        ],
       ),
     );
   }

@@ -1,0 +1,15 @@
+{
+    "language": "English",
+    "@langauge": {
+      "description": "Current language"
+    }, 
+    "helloWorld": "Hello world!",
+    "@helloWorld": {
+      "description": "The programmer greeting!"
+    }, 
+    "headline": "Pocket your ID numbers, unlock your freedom!",
+    "@headline": {
+      "description": "App catchphrase"
+    }
+  }
+  
