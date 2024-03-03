@@ -56,7 +56,7 @@ class AuthPage extends StatelessWidget {
                 // child: const Icon(Icons.home),
                 child: const Text(
                   'START',
-                  style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 21.0),
                 ),
               ),
             )
