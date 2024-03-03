@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
-import '/shared/id_categories.dart';
+import '../../shared/id_category_list.dart';
 import '/style/colors.dart';
 
 class IdCreate extends StatelessWidget {
@@ -10,7 +10,7 @@ class IdCreate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const IdCreateForm(),
+      body: const Center(child: IdCreateForm()),
     );
   }
 }
@@ -244,6 +244,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         },
                         child: const Text(
                           'SAVE',
+                          style: TextStyle(letterSpacing: 1.0),
                         ),
                       ),
                     )

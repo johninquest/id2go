@@ -12,11 +12,13 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int currentIndex = 0;
-/*   static final List _body = [
+/*   
+static final List _body = [
     const HomeButtons(),
     const IdCreate(),
     const IdList(),
-  ]; */
+  ]; 
+*/
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +31,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
           style: TextStyle(color: txtWhiteColor, letterSpacing: 1.0),
         ),
         centerTitle: true,
-/*         actions: [
+/*         
+        actions: [
           IconButton(
             onPressed: () => context.push('/auth'),
             icon: const Icon(Icons.logout_outlined),
             tooltip: 'Log out',
           )
-        ], */
+        ], 
+        */
       ),
       /* drawer: const LeftMenu(), */
       body: const Center(

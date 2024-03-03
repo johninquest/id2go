@@ -12,7 +12,10 @@ class AuthPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'GoID',
-          style: TextStyle(color: primaryColor, letterSpacing: 1.0),
+          style: TextStyle(
+              color: primaryColor,
+              letterSpacing: 1.0,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -45,10 +48,17 @@ class AuthPage extends StatelessWidget {
             const SizedBox(
               height: 13.0,
             ), */
-            ElevatedButton(
-              onPressed: () => context.go('/home'),
-              // child: const Icon(Icons.home),
-              child: Text('start'.toUpperCase()),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.08,
+              child: ElevatedButton(
+                onPressed: () => context.go('/home'),
+                // child: const Icon(Icons.home),
+                child: const Text(
+                  'START',
+                  style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+                ),
+              ),
             )
           ],
         ),
