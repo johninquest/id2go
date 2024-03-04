@@ -32,10 +32,10 @@ class AuthPage extends StatelessWidget {
                     /* 'Pocket your ID numbers, unlock your freedom!', */
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      wordSpacing: 5.0,
-                      letterSpacing: 1.0,
-                    ))),
+                        fontWeight: FontWeight.bold,
+                        wordSpacing: 5.0,
+                        letterSpacing: 1.0,
+                        color: primaryColor))),
             const SizedBox(
               height: 13.0,
             ),
@@ -56,7 +56,7 @@ class AuthPage extends StatelessWidget {
                 // child: const Icon(Icons.home),
                 child: const Text(
                   'START',
-                  style: TextStyle(fontSize: 21.0),
+                  style: TextStyle(fontSize: 21.0, color: txtWhiteColor),
                 ),
               ),
             )

@@ -125,12 +125,13 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idName,
-                      decoration: const InputDecoration(labelText: 'ID Name'),
+                      decoration: const InputDecoration(labelText: 'Issuer'),
+                      style: const TextStyle(color: txtWhiteColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'ID name ?';
+                          return 'Issuer ?';
                         }
                         return null;
                       },
@@ -141,7 +142,9 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idNumber,
-                      decoration: const InputDecoration(labelText: 'ID Number'),
+                      decoration: const InputDecoration(
+                          labelText: 'ID Number', fillColor: txtWhiteColor),
+                      style: const TextStyle(color: txtWhiteColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
@@ -162,6 +165,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           controller: idValidFrom,
                           decoration:
                               const InputDecoration(labelText: 'Valid from'),
+                          style: const TextStyle(color: txtWhiteColor),
                           keyboardType: TextInputType.text,
                           textCapitalization: TextCapitalization.sentences,
                           validator: (val) {
@@ -179,6 +183,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           controller: idValidTo,
                           decoration:
                               const InputDecoration(labelText: 'Valid to'),
+                          style: const TextStyle(color: txtWhiteColor),
                           keyboardType: TextInputType.text,
                           textCapitalization: TextCapitalization.sentences,
                           validator: (val) {
@@ -197,6 +202,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: TextFormField(
                       controller: idComment,
                       decoration: const InputDecoration(labelText: 'Comment'),
+                      style: const TextStyle(color: txtWhiteColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       maxLines: 2,
@@ -235,7 +241,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         style: ElevatedButton.styleFrom(),
                         child: const Text(
                           'CANCEL',
-                          style: TextStyle(color: txtBlackColor),
+                          style: TextStyle(color: txtWhiteColor),
                         ),
                       ),
                     ),
@@ -247,7 +253,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         },
                         child: const Text(
                           'SAVE',
-                          style: TextStyle(letterSpacing: 1.0),
+                          style: TextStyle(
+                              letterSpacing: 1.0, color: primaryColor),
                         ),
                       ),
                     )

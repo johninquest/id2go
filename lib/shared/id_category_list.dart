@@ -5,7 +5,7 @@ const List<String> idnCategory = [
   'government',
   'health',
   'insurance',
-  'official',
+/*   'official', */
   'professional',
   'shopping',
   'subscription',

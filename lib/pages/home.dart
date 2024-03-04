@@ -102,7 +102,10 @@ class HomeButtons extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 5.0, top: 5.0),
           child: ElevatedButton(
               onPressed: () => context.push('/id-list'),
-              child: const Text('ID List')),
+              child: const Text(
+                'ID List',
+                style: TextStyle(color: txtWhiteColor),
+              )),
         ),
         Container(
           width: MediaQuery.of(context).size.width * 0.8,
@@ -110,7 +113,8 @@ class HomeButtons extends StatelessWidget {
           margin: const EdgeInsets.only(bottom: 5.0, top: 5.0),
           child: ElevatedButton(
               onPressed: () => context.push('/id-create'),
-              child: const Text('New ID')),
+              child:
+                  const Text('New ID', style: TextStyle(color: txtWhiteColor))),
         ),
       ],
     );
