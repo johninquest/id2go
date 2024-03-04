@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
-import '../../shared/id_category_list.dart';
+import '/shared/id_category_list.dart';
 import '/style/colors.dart';
 
 class IdCreate extends StatelessWidget {
@@ -89,7 +89,10 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       items: typesOfIds.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
-                          child: Text(value),
+                          child: Text(
+                            value,
+                            style: const TextStyle(color: txtWhiteColor),
+                          ),
                         );
                       }).toList(),
 
