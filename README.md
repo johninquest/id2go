@@ -1,6 +1,6 @@
 <h3 align="center">GoID<h3>
 
-<p align="center">A digital wallet for your IDs and numbers while on the go, built with Flutter</p>
+<p align="center">A digital wallet for your IDs and numbers, built with Flutter</p>
 
 ## Feature roadmap
 
