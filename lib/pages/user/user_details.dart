@@ -19,9 +19,13 @@ class UserPage extends StatelessWidget {
         child: UserInformation(),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
         onPressed: () => context.push('/user-create'),
         tooltip: 'Add',
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: txtWhiteColor,
+        ),
       ),
     );
   }
@@ -40,10 +44,10 @@ class UserInformation extends StatelessWidget {
             fieldTitle: 'First name',
             fieldValue: 'Mike',
           ),
-          const Divider(
+          /*  const Divider(
             indent: 89.0,
             endIndent: 89.0,
-          ),
+          ), */
           const UserInfoRow(
             fieldTitle: 'Last name',
             fieldValue: 'Xaver',
@@ -60,8 +64,8 @@ class UserInformation extends StatelessWidget {
                   onPressed: () => debugPrint('Tapped delete button'),
                   style: ElevatedButton.styleFrom(),
                   child: const Text(
-                    'delete',
-                    style: TextStyle(color: txtBlackColor),
+                    'DELETE',
+                    style: TextStyle(color: txtWhiteColor),
                   ),
                 ),
               ),
@@ -69,7 +73,8 @@ class UserInformation extends StatelessWidget {
                 margin: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () => debugPrint('Tapped edit button'),
-                  child: const Text('edit'),
+                  child:
+                      const Text('EDIT', style: TextStyle(color: primaryColor)),
                 ),
               )
             ],
@@ -102,7 +107,7 @@ class UserInfoRow extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(left: 21.0),
-          child: Text(fieldValue),
+          child: Text(fieldValue, style: const TextStyle(color: txtWhiteColor)),
         )
       ],
     );

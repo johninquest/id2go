@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import '../style/colors.dart';
+
 class VersionInfo extends StatefulWidget {
   const VersionInfo({super.key});
 
@@ -28,10 +30,14 @@ class _VersionInfoState extends State<VersionInfo> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('App Name: ${data.appName}'),
-                  Text('Package Name: ${data.packageName}'),
-                  Text('Version: ${data.version}'),
-                  Text('Build Number: ${data.buildNumber}'),
+                  Text('App Name: ${data.appName}',
+                      style: const TextStyle(color: txtWhiteColor)),
+                  Text('Package Name: ${data.packageName}',
+                      style: const TextStyle(color: txtWhiteColor)),
+                  Text('Version: ${data.version}',
+                      style: const TextStyle(color: txtWhiteColor)),
+                  Text('Build Number: ${data.buildNumber}',
+                      style: const TextStyle(color: txtWhiteColor)),
                 ],
               );
             }));

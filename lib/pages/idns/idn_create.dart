@@ -91,7 +91,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           value: value,
                           child: Text(
                             value,
-                            style: const TextStyle(color: txtWhiteColor),
+                            style: const TextStyle(color: primaryColor),
                           ),
                         );
                       }).toList(),
@@ -236,8 +236,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     Container(
                       margin: const EdgeInsets.all(10.0),
                       child: ElevatedButton(
-                        /* onPressed: () => Navigator.of(context).pop(), */
-                        onPressed: () => debugPrint('Tapped cancel button'),
+                        onPressed: () => Navigator.of(context).pop(),
+                        /* onPressed: () => debugPrint('Tapped cancel button'), */
                         style: ElevatedButton.styleFrom(),
                         child: const Text(
                           'CANCEL',

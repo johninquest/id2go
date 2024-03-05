@@ -1,4 +1,4 @@
-<h3 align="center">MyIDs<h3>
+<h3 align="center">GoID<h3>
 
 <p align="center">A digital wallet for your IDs and numbers while on the go, built with Flutter</p>
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/style/colors.dart';
 import '../../utils/version_info.dart';
 // import '../style/colors.dart';
 
@@ -26,7 +27,10 @@ class AppInfoPage extends StatelessWidget {
           const SizedBox(
             height: 8.0,
           ),
-          Text('deviceLanguageCode: $languageCode')
+          Text(
+            'deviceLanguageCode: $languageCode',
+            style: const TextStyle(color: txtWhiteColor),
+          )
         ],
       ),
     );

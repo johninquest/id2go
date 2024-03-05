@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       /* title: 'Flutter Demo', */
       theme: ThemeData.dark().copyWith(
-        // colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+        // colorScheme: ColorScheme.fromSeed(seedColor: txtBlackColor),
         // useMaterial3: true,
         /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
         textTheme: GoogleFonts.latoTextTheme(),
