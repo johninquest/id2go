@@ -65,7 +65,7 @@ class UserInformation extends StatelessWidget {
                   style: ElevatedButton.styleFrom(),
                   child: const Text(
                     'DELETE',
-                    style: TextStyle(color: txtWhiteColor),
+                    style: TextStyle(color: txtBlackColor),
                   ),
                 ),
               ),
@@ -107,7 +107,7 @@ class UserInfoRow extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(left: 21.0),
-          child: Text(fieldValue, style: const TextStyle(color: txtWhiteColor)),
+          child: Text(fieldValue, style: const TextStyle(color: txtBlackColor)),
         )
       ],
     );

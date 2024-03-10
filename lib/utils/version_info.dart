@@ -31,13 +31,13 @@ class _VersionInfoState extends State<VersionInfo> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('App Name: ${data.appName}',
-                      style: const TextStyle(color: txtWhiteColor)),
+                      style: const TextStyle(color: txtBlackColor)),
                   Text('Package Name: ${data.packageName}',
-                      style: const TextStyle(color: txtWhiteColor)),
+                      style: const TextStyle(color: txtBlackColor)),
                   Text('Version: ${data.version}',
-                      style: const TextStyle(color: txtWhiteColor)),
+                      style: const TextStyle(color: txtBlackColor)),
                   Text('Build Number: ${data.buildNumber}',
-                      style: const TextStyle(color: txtWhiteColor)),
+                      style: const TextStyle(color: txtBlackColor)),
                 ],
               );
             }));

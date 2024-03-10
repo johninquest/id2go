@@ -1,7 +1,7 @@
 const List<String> idnCategory = [
   '',
   'education',
-  'financial',
+  'finance',
   'government',
   'health',
   'insurance',

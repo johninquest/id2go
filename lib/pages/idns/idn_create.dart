@@ -31,14 +31,15 @@ class _IdCreateFormState extends State<IdCreateForm> {
   final TextEditingController idValidFrom = TextEditingController();
   final TextEditingController idValidTo = TextEditingController();
   final TextEditingController idComment = TextEditingController();
-  final List categoryList = idnCategory;
-  final List categoryFinanceList = subCategoryFinance;
-  final List categoryGoverment = subCategoryGovernment;
-  final List categoryInsurance = subCategoryInsurance;
-  final List categoryEducation = subCategoryEducation;
+  final idCategoryList = idnCategory;
+  static List<String> idTypeList = [];
+  /*  final categoryFinanceList = subCategoryFinance;
+  final categoryGovermentList = subCategoryGovernment;
+  final categoryInsuranceList = subCategoryInsurance;
+  final categoryEducationList = subCategoryEducation; */
+
 /*   TextEditingController _startDate = TextEditingController();
   TextEditingController _endDate = TextEditingController(); */
-  // TextEditingController _estimatedHours = TextEditingController();
 
 /*   DateTime selectedDate = DateTime.now();
   Future<void> _selectStartDate(BuildContext context) async {
@@ -66,17 +67,25 @@ class _IdCreateFormState extends State<IdCreateForm> {
         _endDate.text = DateTimeHelper().toDeDateFormat('$picked');
       });
   }
-
+  */
+/* 
   @override
   void initState() {
-    DateTime now = DateTime.now();
-    _startDate.text = DateTimeHelper().toDeDateFormat('$now');
+    if (idCategory == 'education') {
+      setState(() {
+        idTypeList = subCategoryEducation;
+      });
+    }
+    if (idCategory == 'finance') {
+      setState(() {
+        idTypeList = subCategoryFinance;
+      });
+    }
     super.initState();
   } */
 
   @override
   Widget build(BuildContext context) {
-    // const typesOfIds = idnCategory;
     return Form(
         key: idCreateFormKey,
         child: SingleChildScrollView(
@@ -90,8 +99,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: DropdownButtonFormField(
                       decoration:
                           const InputDecoration(labelText: 'ID Category'),
-                      // items: DataAsList().taskListItems,
-                      items: idnCategory.map((String value) {
+                      items: idCategoryList.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(
@@ -100,10 +108,22 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           ),
                         );
                       }).toList(),
-
                       validator: (val) => val == null ? 'ID category ?' : null,
                       onChanged: (val) => setState(() {
-                        idType = val as String;
+                        idCategory = val as String;
+                        _setIdTypeList(val);
+                        /*   if (val == 'education') {
+                          idTypeList = subCategoryEducation;
+                        }
+                        if (val == 'finance') {
+                          idTypeList = subCategoryFinance;
+                        }
+                        if (val == 'government') {
+                          idTypeList = subCategoryGovernment;
+                        }
+                        if (val == 'insurance') {
+                          idTypeList = subCategoryInsurance;
+                        } */
                       }),
                     )),
                 Container(
@@ -111,14 +131,12 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
                       decoration: const InputDecoration(labelText: 'ID Type'),
-                      // items: DataAsList().taskListItems,
-                      items: subCategoryGovernment.map((String value) {
+                      items: idTypeList.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
                         );
                       }).toList(),
-
                       validator: (val) => val == null ? 'ID Type ?' : null,
                       onChanged: (val) => setState(() {
                         idType = val as String;
@@ -267,5 +285,20 @@ class _IdCreateFormState extends State<IdCreateForm> {
                 ),
               ]),
         ));
+  }
+
+  void _setIdTypeList(String selectedCategory) {
+    if (selectedCategory == 'education') {
+      idTypeList = subCategoryEducation;
+    }
+    if (selectedCategory == 'finance') {
+      idTypeList = subCategoryFinance;
+    }
+    if (selectedCategory == 'government') {
+      idTypeList = subCategoryGovernment;
+    }
+    if (selectedCategory == 'insurance') {
+      idTypeList = subCategoryInsurance;
+    }
   }
 }

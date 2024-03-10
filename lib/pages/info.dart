@@ -29,7 +29,7 @@ class AppInfoPage extends StatelessWidget {
           ),
           Text(
             'deviceLanguageCode: $languageCode',
-            style: const TextStyle(color: txtWhiteColor),
+            style: const TextStyle(color: txtBlackColor),
           )
         ],
       ),
