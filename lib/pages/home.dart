@@ -104,7 +104,7 @@ class HomeButtons extends StatelessWidget {
               onPressed: () => context.push('/id-list'),
               child: const Text(
                 'ID List',
-                style: TextStyle(color: txtWhiteColor),
+                style: TextStyle(color: txtBlackColor),
               )),
         ),
         Container(
@@ -114,7 +114,7 @@ class HomeButtons extends StatelessWidget {
           child: ElevatedButton(
               onPressed: () => context.push('/id-create'),
               child:
-                  const Text('New ID', style: TextStyle(color: txtWhiteColor))),
+                  const Text('New ID', style: TextStyle(color: txtBlackColor))),
         ),
       ],
     );

@@ -16,7 +16,7 @@ class IdList extends StatelessWidget {
       ),
       body: const Center(
           child: Text('List of ID numbers',
-              style: TextStyle(color: txtWhiteColor))),
+              style: TextStyle(color: txtBlackColor))),
     );
   }
 }

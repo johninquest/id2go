@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       routerConfig: pageRouter,
       debugShowCheckedModeBanner: false,
       /* title: 'Flutter Demo', */
-      theme: ThemeData.dark().copyWith(
-        // colorScheme: ColorScheme.fromSeed(seedColor: txtBlackColor),
-        // useMaterial3: true,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+        useMaterial3: true,
         /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
         textTheme: GoogleFonts.latoTextTheme(),
         // home: const AuthPage(),

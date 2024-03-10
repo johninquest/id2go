@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
-import '/shared/id_category_list.dart';
+import '../../shared/lists/id_category_list.dart';
 import '/style/colors.dart';
 
 class IdCreate extends StatelessWidget {
@@ -31,6 +31,11 @@ class _IdCreateFormState extends State<IdCreateForm> {
   final TextEditingController idValidFrom = TextEditingController();
   final TextEditingController idValidTo = TextEditingController();
   final TextEditingController idComment = TextEditingController();
+  final List categoryList = idnCategory;
+  final List categoryFinanceList = subCategoryFinance;
+  final List categoryGoverment = subCategoryGovernment;
+  final List categoryInsurance = subCategoryInsurance;
+  final List categoryEducation = subCategoryEducation;
 /*   TextEditingController _startDate = TextEditingController();
   TextEditingController _endDate = TextEditingController(); */
   // TextEditingController _estimatedHours = TextEditingController();
@@ -71,7 +76,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
 
   @override
   Widget build(BuildContext context) {
-    const typesOfIds = idnCategory;
+    // const typesOfIds = idnCategory;
     return Form(
         key: idCreateFormKey,
         child: SingleChildScrollView(
@@ -86,7 +91,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       decoration:
                           const InputDecoration(labelText: 'ID Category'),
                       // items: DataAsList().taskListItems,
-                      items: typesOfIds.map((String value) {
+                      items: idnCategory.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(
@@ -107,7 +112,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: DropdownButtonFormField(
                       decoration: const InputDecoration(labelText: 'ID Type'),
                       // items: DataAsList().taskListItems,
-                      items: [''].map((String value) {
+                      items: subCategoryGovernment.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(value),
@@ -241,7 +246,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         style: ElevatedButton.styleFrom(),
                         child: const Text(
                           'CANCEL',
-                          style: TextStyle(color: txtWhiteColor),
+                          style: TextStyle(color: txtBlackColor),
                         ),
                       ),
                     ),

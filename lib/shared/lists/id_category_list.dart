@@ -21,7 +21,7 @@ const List<String> subCategoryEducation = [
   'residence permit',
 ];
 
-const List<String> subCategoryFinancial = [
+const List<String> subCategoryFinance = [
   '',
   'bank account',
   'credit card',
