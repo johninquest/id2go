@@ -49,14 +49,13 @@ class AuthPage extends StatelessWidget {
               height: 13.0,
             ), */
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.5,
+              // width: MediaQuery.of(context).size.width * 0.5,
               height: MediaQuery.of(context).size.height * 0.08,
               child: ElevatedButton(
                 onPressed: () => context.go('/home'),
                 // child: const Icon(Icons.home),
                 child: const Text(
                   'START',
-                  style: TextStyle(fontSize: 21.0),
                 ),
               ),
             )

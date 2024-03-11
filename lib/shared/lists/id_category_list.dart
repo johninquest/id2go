@@ -9,34 +9,33 @@ const List<String> idnCategory = [
   'professional',
   'shopping',
   'subscription',
+  'social_media',
   'travel',
   'utilities'
 ];
 
 const List<String> subCategoryEducation = [
   '',
-  'library card',
-  'student ID card',
-  'passport',
-  'residence permit',
+  'library_card',
+  'student_id_card',
 ];
 
 const List<String> subCategoryFinance = [
   '',
-  'bank account',
-  'credit card',
-  'debit card',
+  'bank_account',
+  'credit_card',
+  'debit_card',
   'tax id'
 ];
 
 const List<String> subCategoryGovernment = [
   '',
-  'driving license',
-  'personal ID card',
+  'driving_license',
+  'personal_id_card',
   'passport',
-  'residence permit',
-  'tax ID',
-  'social security number'
+  'residence_permit',
+  'tax_id',
+  'social_security_number'
 ];
 
 const List<String> subCategoryInsurance = [
@@ -44,13 +43,40 @@ const List<String> subCategoryInsurance = [
   'accident',
   'automobile',
   'health',
-  'home content',
-  'legal protection',
+  'home_content',
+  'legal_protection',
   'life',
-  'personal liability',
+  'personal_liability',
   'pet',
   'travel',
   'others'
+];
+
+const List<String> subCategoryTravel = [
+  '',
+  'bus_ticket',
+  'train_ticket',
+  'flight_ticket'
+];
+
+const List<String> subCategoryOthers = [
+  '',
+  'email',
+  'social_media',
+  'username',
+  'url'
+];
+
+const List<String> subCategorySocialMedia = [
+  '',
+  'instagram',
+  'facebook',
+  'linkedin',
+  'reddit',
+  'snapchat',
+  'tiktok',
+  'twitter',
+  'wechat'
 ];
 
 /* 

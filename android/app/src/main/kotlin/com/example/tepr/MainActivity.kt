@@ -1,4 +1,4 @@
-package com.example.tepr
+package de.johnapps.goid
 
 import io.flutter.embedding.android.FlutterActivity
 
