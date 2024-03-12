@@ -25,7 +25,7 @@ const List<String> subCategoryFinance = [
   'bank_account',
   'credit_card',
   'debit_card',
-  'tax id'
+  'tax_id'
 ];
 
 const List<String> subCategoryGovernment = [
@@ -42,14 +42,16 @@ const List<String> subCategoryInsurance = [
   '',
   'accident',
   'automobile',
+  'disability',
   'health',
   'home_content',
+  'home_owners',
   'legal_protection',
   'life',
   'personal_liability',
   'pet',
   'travel',
-  'others'
+  'other'
 ];
 
 const List<String> subCategoryTravel = [
@@ -64,7 +66,8 @@ const List<String> subCategoryOthers = [
   'email',
   'social_media',
   'username',
-  'url'
+  'url',
+  'shopping',
 ];
 
 const List<String> subCategorySocialMedia = [
@@ -79,6 +82,26 @@ const List<String> subCategorySocialMedia = [
   'wechat'
 ];
 
+const List<String> subCategoryUtilities = [
+  '',
+  'electricity',
+  'gas',
+  'water',
+  'trash'
+];
+
+const List<String> subCategorySubscription = [
+  '',
+  'music',
+  'gaming',
+  'video',
+  'delivery',
+  'news',
+  'fitness',
+  'wellness',
+  'cloud_storage',
+  'other'
+];
 /* 
 const List<String> idTypeList = [
   '',
