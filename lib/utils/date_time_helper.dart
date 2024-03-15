@@ -22,6 +22,17 @@ class DateTimeHelper {
     return '$utcNow';
   }
 
+  toDeDateFormat(String dt) {
+    if (DateTime.tryParse(dt) != null && dt != '') {
+      DateTime parsedDatTime = DateTime.parse(dt);
+      DateFormat deDateFormat = DateFormat('dd.MM.yyyy');
+      String toDateFormat = deDateFormat.format(parsedDatTime);
+      return toDateFormat;
+    } else {
+      return '--.--.----';
+    }
+  }
+
   toDeDateTimeStr(DateTime? dt) {
     if (dt != null) {
       // DateFormat deDateTimeFormat = DateFormat('dd.MM.yyyy HH:mm:ss');

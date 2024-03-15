@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
 import '../../shared/lists/id_category_list.dart';
+import '../../utils/date_time_helper.dart';
 import '/style/colors.dart';
 
 class IdCreate extends StatelessWidget {
@@ -33,27 +34,21 @@ class _IdCreateFormState extends State<IdCreateForm> {
   final TextEditingController idComment = TextEditingController();
   final idCategoryList = idnCategory;
   static List<String> idTypeList = [];
-  /*  final categoryFinanceList = subCategoryFinance;
-  final categoryGovermentList = subCategoryGovernment;
-  final categoryInsuranceList = subCategoryInsurance;
-  final categoryEducationList = subCategoryEducation; */
 
-/*   TextEditingController _startDate = TextEditingController();
-  TextEditingController _endDate = TextEditingController(); */
-
-/*   DateTime selectedDate = DateTime.now();
+  DateTime selectedDate = DateTime.now();
   Future<void> _selectStartDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: selectedDate,
         firstDate: DateTime(1990, 1),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
+    if (picked != null && picked != selectedDate) {
       setState(() {
         // selectedDate = picked;
-        _startDate.text = DateTimeHelper().toDeDateFormat('$picked');
+        idValidFrom.text = DateTimeHelper().toDeDateFormat('$picked');
         // _pickedDate.text = DateTimeFormatter().toDateString(picked);
       });
+    }
   }
 
   Future<void> _selectEndDate(BuildContext context) async {
@@ -62,27 +57,12 @@ class _IdCreateFormState extends State<IdCreateForm> {
         initialDate: selectedDate,
         firstDate: DateTime(1990, 1),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate)
+    if (picked != null && picked != selectedDate) {
       setState(() {
-        _endDate.text = DateTimeHelper().toDeDateFormat('$picked');
+        idValidTo.text = DateTimeHelper().toDeDateFormat('$picked');
       });
+    }
   }
-  */
-/* 
-  @override
-  void initState() {
-    if (idCategory == 'education') {
-      setState(() {
-        idTypeList = subCategoryEducation;
-      });
-    }
-    if (idCategory == 'finance') {
-      setState(() {
-        idTypeList = subCategoryFinance;
-      });
-    }
-    super.initState();
-  } */
 
   @override
   Widget build(BuildContext context) {
@@ -97,14 +77,15 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
-                      decoration:
-                          const InputDecoration(labelText: 'ID Category'),
+                      decoration: const InputDecoration(
+                          labelText: 'ID Category',
+                          labelStyle: TextStyle(color: primaryColor)),
                       items: idCategoryList.map((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(
                             value,
-                            style: const TextStyle(color: primaryColor),
+                            style: const TextStyle(color: txtBlackColor),
                           ),
                         );
                       }).toList(),
@@ -119,7 +100,9 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
-                      decoration: const InputDecoration(labelText: 'ID Type'),
+                      decoration: const InputDecoration(
+                          labelText: 'ID Type',
+                          labelStyle: TextStyle(color: primaryColor)),
                       items: idTypeList.isEmpty
                           ? [
                               const DropdownMenuItem(
@@ -130,7 +113,10 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           : idTypeList.map((String item) {
                               return DropdownMenuItem<String>(
                                 value: item,
-                                child: Text(item),
+                                child: Text(
+                                  item,
+                                  style: const TextStyle(color: txtBlackColor),
+                                ),
                               );
                             }).toList(),
                       validator: (val) => val == null ? 'ID Type ?' : null,
@@ -144,8 +130,10 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idName,
-                      decoration: const InputDecoration(labelText: 'Issuer'),
-                      style: const TextStyle(color: txtWhiteColor),
+                      decoration: const InputDecoration(
+                          labelText: 'Issuer',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      style: const TextStyle(color: txtBlackColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
@@ -162,8 +150,9 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: TextFormField(
                       controller: idNumber,
                       decoration: const InputDecoration(
-                          labelText: 'ID Number', fillColor: txtWhiteColor),
-                      style: const TextStyle(color: txtWhiteColor),
+                          labelText: 'ID Number',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      style: const TextStyle(color: txtBlackColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
@@ -182,17 +171,19 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: TextFormField(
                           controller: idValidFrom,
-                          decoration:
-                              const InputDecoration(labelText: 'Valid from'),
-                          style: const TextStyle(color: txtWhiteColor),
+                          decoration: const InputDecoration(
+                              labelText: 'Valid from',
+                              labelStyle: TextStyle(color: primaryColor)),
+                          style: const TextStyle(color: txtBlackColor),
                           keyboardType: TextInputType.text,
                           textCapitalization: TextCapitalization.sentences,
-                          validator: (val) {
+                          onTap: () => _selectStartDate(context),
+                          /* validator: (val) {
                             if (val == null || val.isEmpty) {
                               return 'Valid from ?';
                             }
                             return null;
-                          },
+                          }, */
                         )),
                     Container(
                         width: MediaQuery.of(context).size.width * 0.45,
@@ -202,15 +193,10 @@ class _IdCreateFormState extends State<IdCreateForm> {
                           controller: idValidTo,
                           decoration:
                               const InputDecoration(labelText: 'Valid to'),
-                          style: const TextStyle(color: txtWhiteColor),
+                          style: const TextStyle(color: txtBlackColor),
                           keyboardType: TextInputType.text,
                           textCapitalization: TextCapitalization.sentences,
-                          validator: (val) {
-                            if (val == null || val.isEmpty) {
-                              return 'Valid to ?';
-                            }
-                            return null;
-                          },
+                          onTap: () => _selectEndDate(context),
                         )),
                   ],
                 ),
@@ -220,34 +206,14 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: TextFormField(
                       controller: idComment,
-                      decoration: const InputDecoration(labelText: 'Comment'),
-                      style: const TextStyle(color: txtWhiteColor),
+                      decoration: const InputDecoration(
+                          labelText: 'Comment',
+                          labelStyle: TextStyle(color: primaryColor)),
+                      style: const TextStyle(color: txtBlackColor),
                       keyboardType: TextInputType.text,
                       textCapitalization: TextCapitalization.sentences,
                       maxLines: 2,
                     )),
-/*                 Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    margin: const EdgeInsets.only(bottom: 10.0),
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: TextFormField(
-                      controller: _startDate,
-                      enabled: true,
-                      readOnly: true,
-                      decoration: const InputDecoration(labelText: 'Beginn'),
-                      onTap: () => _selectStartDate(context),
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width * 0.95,
-                    margin: const EdgeInsets.only(bottom: 10.0),
-                    padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: TextFormField(
-                      controller: _endDate,
-                      enabled: true,
-                      readOnly: true,
-                      decoration: const InputDecoration(labelText: 'Ende'),
-                      onTap: () => _selectEndDate(context),
-                    )), */
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -293,8 +259,6 @@ class _IdCreateFormState extends State<IdCreateForm> {
       idTypeList = subCategoryGovernment;
     } else if (selectedCategory == 'insurance') {
       idTypeList = subCategoryInsurance;
-    } else if (selectedCategory == 'shopping') {
-      idTypeList = [''];
     } else if (selectedCategory == 'socialmedia') {
       idTypeList = subCategorySocialMedia;
     } else if (selectedCategory == 'subscription') {

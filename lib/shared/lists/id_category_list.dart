@@ -5,11 +5,10 @@ const List<String> idnCategory = [
   'government',
   'health',
   'insurance',
-/*   'official', */
   'professional',
   'shopping',
   'subscription',
-  'social_media',
+  'socialmedia',
   'travel',
   'utilities'
 ];
@@ -58,7 +57,8 @@ const List<String> subCategoryTravel = [
   '',
   'bus_ticket',
   'train_ticket',
-  'flight_ticket'
+  'flight_ticket',
+  'other'
 ];
 
 const List<String> subCategoryOthers = [
@@ -72,34 +72,38 @@ const List<String> subCategoryOthers = [
 
 const List<String> subCategorySocialMedia = [
   '',
-  'instagram',
+  'discord',
   'facebook',
+  'instagram',
   'linkedin',
   'reddit',
   'snapchat',
   'tiktok',
   'twitter',
-  'wechat'
+  'wechat',
+  'other'
 ];
 
 const List<String> subCategoryUtilities = [
   '',
   'electricity',
   'gas',
+  'trash',
   'water',
-  'trash'
+  'other'
 ];
 
 const List<String> subCategorySubscription = [
   '',
-  'music',
-  'gaming',
-  'video',
-  'delivery',
-  'news',
-  'fitness',
-  'wellness',
   'cloud_storage',
+  'delivery',
+  'fitness',
+  'gaming',
+  'music',
+  'news',
+  'streaming',
+  'video',
+  'wellness',
   'other'
 ];
 /* 
