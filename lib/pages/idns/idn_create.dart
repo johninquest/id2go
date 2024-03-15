@@ -111,6 +111,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       validator: (val) => val == null ? 'ID category ?' : null,
                       onChanged: (val) => setState(() {
                         idCategory = val as String;
+
                         _setIdTypeList(val);
                       }),
                     )),
@@ -119,12 +120,19 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
                       decoration: const InputDecoration(labelText: 'ID Type'),
-                      items: idTypeList.map((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
+                      items: idTypeList.isEmpty
+                          ? [
+                              const DropdownMenuItem(
+                                value: '',
+                                child: Text('Select Type'),
+                              ),
+                            ]
+                          : idTypeList.map((String item) {
+                              return DropdownMenuItem<String>(
+                                value: item,
+                                child: Text(item),
+                              );
+                            }).toList(),
                       validator: (val) => val == null ? 'ID Type ?' : null,
                       onChanged: (val) => setState(() {
                         idType = val as String;
@@ -276,17 +284,25 @@ class _IdCreateFormState extends State<IdCreateForm> {
   }
 
   void _setIdTypeList(String selectedCategory) {
+    // idTypeList = [];
     if (selectedCategory == 'education') {
       idTypeList = subCategoryEducation;
-    }
-    if (selectedCategory == 'finance') {
+    } else if (selectedCategory == 'finance') {
       idTypeList = subCategoryFinance;
-    }
-    if (selectedCategory == 'government') {
+    } else if (selectedCategory == 'government') {
       idTypeList = subCategoryGovernment;
-    }
-    if (selectedCategory == 'insurance') {
+    } else if (selectedCategory == 'insurance') {
       idTypeList = subCategoryInsurance;
+    } else if (selectedCategory == 'shopping') {
+      idTypeList = [''];
+    } else if (selectedCategory == 'socialmedia') {
+      idTypeList = subCategorySocialMedia;
+    } else if (selectedCategory == 'subscription') {
+      idTypeList = subCategorySubscription;
+    } else if (selectedCategory == 'travel') {
+      idTypeList = subCategoryTravel;
+    } else if (selectedCategory == 'utilities') {
+      idTypeList = subCategoryUtilities;
     }
   }
 }
