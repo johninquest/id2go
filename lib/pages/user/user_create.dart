@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../shared/lists/countries.dart';
 import '../../style/colors.dart';
 
 class UserCreatePage extends StatelessWidget {
@@ -30,7 +31,8 @@ class _NewUserFormState extends State<NewUserForm> {
   final TextEditingController firstName = TextEditingController();
   final TextEditingController lastName = TextEditingController();
   final TextEditingController dateOfBirth = TextEditingController();
-  final TextEditingController countryName = TextEditingController();
+  // final TextEditingController countryName = TextEditingController();
+  String? countryName;
 
   @override
   Widget build(BuildContext context) {
@@ -74,14 +76,22 @@ class _NewUserFormState extends State<NewUserForm> {
                 )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
-                margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-                child: TextFormField(
-                  controller: countryName,
-                  enabled: true,
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                child: DropdownButtonFormField(
                   decoration: const InputDecoration(labelText: 'Country'),
-                  keyboardType: TextInputType.text,
-                  textCapitalization: TextCapitalization.words,
+                  items: countryList.map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: const TextStyle(color: primaryColor),
+                      ),
+                    );
+                  }).toList(),
+                  validator: (val) => val == null ? 'Country ?' : null,
+                  onChanged: (val) => setState(() {
+                    countryName = val as String;
+                  }),
                 )),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +103,7 @@ class _NewUserFormState extends State<NewUserForm> {
                     onPressed: () => Navigator.of(context).pop(),
                     style: ElevatedButton.styleFrom(),
                     child: const Text(
-                      'cancel',
+                      'CANCEL',
                       style: TextStyle(color: txtBlackColor),
                     ),
                   ),
@@ -102,7 +112,7 @@ class _NewUserFormState extends State<NewUserForm> {
                   margin: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
                     onPressed: () => debugPrint('Tapped save button'),
-                    child: const Text('save'),
+                    child: const Text('SAVE'),
                   ),
                 )
               ],

@@ -112,18 +112,6 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       onChanged: (val) => setState(() {
                         idCategory = val as String;
                         _setIdTypeList(val);
-                        /*   if (val == 'education') {
-                          idTypeList = subCategoryEducation;
-                        }
-                        if (val == 'finance') {
-                          idTypeList = subCategoryFinance;
-                        }
-                        if (val == 'government') {
-                          idTypeList = subCategoryGovernment;
-                        }
-                        if (val == 'insurance') {
-                          idTypeList = subCategoryInsurance;
-                        } */
                       }),
                     )),
                 Container(
