@@ -1,5 +1,8 @@
 {
-  "language": "Deutsch", 
-  "helloWorld": "Hallo welt!", 
-  "headline": "Stecke deine Identifikationsnummern ein, schalte deine Freiheit frei!"
+  "@@locale": "de",
+  "language": "Deutsch",
+  "helloWorld": "Hallo welt!",
+  "headline": "Stecke deine Identifikationsnummern ein, schalte deine Freiheit frei!", 
+  "leftMenuUser": "Benutzer", 
+  "leftMenuInfo": "Info"
 }
