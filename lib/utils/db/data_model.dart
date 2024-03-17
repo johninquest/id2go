@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+/* import 'package:hive/hive.dart';
 
 @HiveType(typeId: 1)
 class User {
@@ -55,3 +55,4 @@ class IdRecord {
     return '$idType, $idName, $idNumber, $idValidFrom, $idValidTo, $idComment';
   }
 }
+ */
