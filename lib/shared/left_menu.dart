@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../style/colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 // import 'dart:developer';
 
 class LeftMenu extends StatefulWidget {
@@ -43,8 +42,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 Icons.person_outline,
                 color: primaryColor,
               ),
-              // title: const Text('User'),
-              title: Text(AppLocalizations.of(context)!.leftMenuUser),
+              title: const Text('User'),
               /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
               onTap: () => context.push('/user-create'),
             ),
@@ -53,8 +51,7 @@ class _LeftMenuState extends State<LeftMenu> {
                 Icons.info_outline,
                 color: primaryColor,
               ),
-              // title: const Text('Info'),
-              title: Text(AppLocalizations.of(context)!.leftMenuInfo),
+              title: const Text('Info'),
               onTap: () => context.push('/info'),
             ),
             /*  ListTile(

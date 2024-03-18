@@ -111,6 +111,13 @@ class _NewUserFormState extends State<NewUserForm> {
                 Container(
                   margin: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
+                    onPressed: () => debugPrint('Tapped edit button'),
+                    child: const Text('EDIT'),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(10.0),
+                  child: ElevatedButton(
                     onPressed: () => debugPrint('Tapped save button'),
                     child: const Text('SAVE'),
                   ),

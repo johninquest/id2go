@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../style/colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -28,10 +27,11 @@ class AuthPage extends StatelessWidget {
             Container(
                 margin:
                     const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
-                child: Text(AppLocalizations.of(context)!.headline,
+                child: const Text(
+                    'Pocket your ID numbers, unlock your freedom!',
                     /* 'Pocket your ID numbers, unlock your freedom!', */
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontWeight: FontWeight.bold,
                         wordSpacing: 5.0,
                         letterSpacing: 1.0,
