@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:idwallet/utils/db/sp_helper.dart';
+import 'package:go_router/go_router.dart';
+import '../../utils/db/sp_helper.dart';
 import 'dart:convert';
 import '../../shared/lists/countries.dart';
 import '../../style/colors.dart';
@@ -83,7 +84,7 @@ class _NewUserFormState extends State<NewUserForm> {
                 padding: const EdgeInsets.only(left: 25.0, right: 25.0),
                 child: TextFormField(
                   controller: firstName,
-                  enabled: isEnabled,
+                  enabled: true,
                   decoration: const InputDecoration(labelText: 'First name'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
@@ -94,7 +95,7 @@ class _NewUserFormState extends State<NewUserForm> {
                 padding: const EdgeInsets.only(left: 25.0, right: 25.0),
                 child: TextFormField(
                   controller: lastName,
-                  enabled: isEnabled,
+                  enabled: true,
                   decoration: const InputDecoration(labelText: 'Last name'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
@@ -105,7 +106,7 @@ class _NewUserFormState extends State<NewUserForm> {
                 padding: const EdgeInsets.only(left: 25.0, right: 25.0),
                 child: TextFormField(
                   controller: dateOfBirth,
-                  enabled: isEnabled,
+                  enabled: true,
                   decoration: const InputDecoration(labelText: 'Date of birth'),
                   onTap: () => _selectDateOfBirth(context),
                 )),
@@ -147,23 +148,6 @@ class _NewUserFormState extends State<NewUserForm> {
                   margin: const EdgeInsets.all(10.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      debugPrint('Tapped edit button');
-                      setState(() {
-                        isEnabled = true;
-                      });
-                    },
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: txtBlackColor),
-                    child: const Text(
-                      'EDIT',
-                      style: TextStyle(color: txtWhiteColor),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(10.0),
-                  child: ElevatedButton(
-                    onPressed: () {
                       debugPrint('Tapped save button');
                       Map<String, dynamic> userData = {
                         '_firstName': firstName.text,
@@ -172,13 +156,15 @@ class _NewUserFormState extends State<NewUserForm> {
                         '_countryName': countryName
                       };
                       debugPrint('User data: $userData');
-                      String userDataStr = jsonEncode(userData);
-                      final sharedPrefs = SpHelper();
-                      sharedPrefs
-                          .storeInSharedPrefs('user_data', userDataStr)
-                          .then((value) => setState(() {
-                                isEnabled = false;
-                              }));
+                      if (userFormKey.currentState!.validate()) {
+                        String userDataStr = jsonEncode(userData);
+                        final sharedPrefs = SpHelper();
+                        sharedPrefs
+                            .storeInSharedPrefs('user_data', userDataStr)
+                            .then((value) => setState(() {
+                                  context.push('/user-details');
+                                }));
+                      }
                     },
                     child: const Text('SAVE'),
                   ),

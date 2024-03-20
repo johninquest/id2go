@@ -1,33 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../style/colors.dart';
-// import 'dart:developer';
+import '../../utils/db/sp_helper.dart';
+import 'dart:convert';
+import '../../shared/lists/countries.dart';
+import '../../style/colors.dart';
+import '../../utils/date_time_helper.dart';
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'User Info',
-        ),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: UserInformation(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: primaryColor,
-        onPressed: () => context.push('/user-create'),
-        tooltip: 'Add',
-        child: const Icon(
-          Icons.add,
-          color: txtWhiteColor,
-        ),
-      ),
-    );
+    return FutureBuilder(
+        future: SpHelper().retrieveFromSharedPrefs('user_data'),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            String? dataStr = snapshot.data!;
+            Map<String, dynamic> dataObj = jsonDecode(dataStr);
+            debugPrint('User data: $dataStr');
+            return Scaffold(
+              appBar: AppBar(
+                title: const Text(
+                  'User info',
+                ),
+                centerTitle: true,
+              ),
+              body: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.89,
+                      margin: const EdgeInsets.all(21.0),
+                      child: Center(child: Text(dataStr))),
+                  ElevatedButton(
+                      onPressed: () => context.push('/user-create'),
+                      child: const Text('EDIT'))
+                ],
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Center(
+              child: Text('Error: ${snapshot.error}'),
+            );
+          }
+          return Center(
+            // child: CircularProgressIndicator(),
+            child: ElevatedButton(
+                onPressed: () => context.push('/user-create'),
+                child: const Text('Add user')),
+          );
+        });
   }
 }
 

@@ -44,7 +44,7 @@ class _LeftMenuState extends State<LeftMenu> {
               ),
               title: const Text('User'),
               /* onTap: () => PageRouter().navigateToPage(const SchoolInfoPage(), context) */
-              onTap: () => context.push('/user-create'),
+              onTap: () => context.push('/user-details'),
             ),
             ListTile(
               leading: const Icon(

@@ -44,7 +44,7 @@ final GoRouter pageRouter = GoRouter(
         builder: (context, state) => const IdList(),
       ),
       GoRoute(
-        path: '/user',
+        path: '/user-details',
         builder: (context, state) => const UserPage(),
       ),
       GoRoute(
