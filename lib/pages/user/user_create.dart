@@ -13,7 +13,7 @@ class UserCreatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New user'),
+        title: const Text('Edit user information'),
         centerTitle: true,
       ),
       body: const Center(
@@ -85,7 +85,9 @@ class _NewUserFormState extends State<NewUserForm> {
                 child: TextFormField(
                   controller: firstName,
                   enabled: true,
-                  decoration: const InputDecoration(labelText: 'First name'),
+                  decoration: const InputDecoration(
+                      labelText: 'First name',
+                      labelStyle: TextStyle(color: primaryColor)),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
                 )),
@@ -96,7 +98,9 @@ class _NewUserFormState extends State<NewUserForm> {
                 child: TextFormField(
                   controller: lastName,
                   enabled: true,
-                  decoration: const InputDecoration(labelText: 'Last name'),
+                  decoration: const InputDecoration(
+                      labelText: 'Last name',
+                      labelStyle: TextStyle(color: primaryColor)),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
                 )),
@@ -107,24 +111,29 @@ class _NewUserFormState extends State<NewUserForm> {
                 child: TextFormField(
                   controller: dateOfBirth,
                   enabled: true,
-                  decoration: const InputDecoration(labelText: 'Date of birth'),
+                  decoration: const InputDecoration(
+                      labelText: 'Date of birth',
+                      labelStyle: TextStyle(color: primaryColor)),
                   onTap: () => _selectDateOfBirth(context),
                 )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: DropdownButtonFormField(
-                  decoration: const InputDecoration(labelText: 'Country'),
-                  items: countryList.map((String value) {
+                  value: countryName,
+                  decoration: const InputDecoration(
+                      labelText: 'Country',
+                      labelStyle: TextStyle(color: primaryColor)),
+                  items: countryList.map((String countryValue) {
                     return DropdownMenuItem<String>(
-                      value: value,
+                      value: countryValue,
                       child: Text(
-                        value,
-                        style: const TextStyle(color: primaryColor),
+                        countryValue,
+                        style: const TextStyle(color: txtBlackColor),
                       ),
                     );
                   }).toList(),
-                  validator: (val) => val == null ? 'Country ?' : null,
+                  // validator: (val) => val == null ? 'Country ?' : null,
                   onChanged: (val) => setState(() {
                     countryName = val as String;
                   }),

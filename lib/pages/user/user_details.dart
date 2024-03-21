@@ -48,7 +48,7 @@ class UserPage extends StatelessWidget {
             // child: CircularProgressIndicator(),
             child: ElevatedButton(
                 onPressed: () => context.push('/user-create'),
-                child: const Text('Add user')),
+                child: const Icon(Icons.add)),
           );
         });
   }
