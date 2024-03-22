@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:idwallet/shared/custom_components.dart';
 import '../../style/colors.dart';
 import '../../utils/db/sp_helper.dart';
 import 'dart:convert';
@@ -26,17 +27,38 @@ class UserPage extends StatelessWidget {
                 ),
                 centerTitle: true,
               ),
-              body: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                      width: MediaQuery.of(context).size.width * 0.89,
-                      margin: const EdgeInsets.all(21.0),
-                      child: Center(child: Text(dataStr))),
-                  ElevatedButton(
-                      onPressed: () => context.push('/user-create'),
-                      child: const Text('EDIT'))
-                ],
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    /* Container(
+                        width: MediaQuery.of(context).size.width * 0.89,
+                        margin: const EdgeInsets.all(21.0),
+                        child: Center(child: Text(dataStr))), */
+                    CustomDataRow(
+                      rowName: 'First name',
+                      rowData: dataObj['_firstName'] ?? '',
+                    ),
+                    CustomDataRow(
+                      rowName: 'Last name',
+                      rowData: dataObj['_lastName'] ?? '',
+                    ),
+                    CustomDataRow(
+                      rowName: 'Date of birth',
+                      rowData: dataObj['_dateOfBirth'] ?? '',
+                    ),
+                    CustomDataRow(
+                      rowName: 'Country',
+                      rowData: dataObj['_countryName'] ?? '',
+                    ),
+                    const SizedBox(
+                      height: 8.0,
+                    ),
+                    ElevatedButton(
+                        onPressed: () => context.push('/user-create'),
+                        child: const Text('EDIT'))
+                  ],
+                ),
               ),
             );
           } else if (snapshot.hasError) {

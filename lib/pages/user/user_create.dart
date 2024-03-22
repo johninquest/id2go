@@ -81,7 +81,7 @@ class _NewUserFormState extends State<NewUserForm> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
                 margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
                 child: TextFormField(
                   controller: firstName,
                   enabled: true,
@@ -94,7 +94,7 @@ class _NewUserFormState extends State<NewUserForm> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
                 margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
                 child: TextFormField(
                   controller: lastName,
                   enabled: true,
@@ -107,7 +107,7 @@ class _NewUserFormState extends State<NewUserForm> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
                 margin: const EdgeInsets.only(bottom: 5.0),
-                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
                 child: TextFormField(
                   controller: dateOfBirth,
                   enabled: true,
@@ -118,7 +118,7 @@ class _NewUserFormState extends State<NewUserForm> {
                 )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.89,
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                padding: const EdgeInsets.only(left: 21.0, right: 21.0),
                 child: DropdownButtonFormField(
                   value: countryName,
                   decoration: const InputDecoration(
