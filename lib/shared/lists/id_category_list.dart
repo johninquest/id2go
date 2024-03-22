@@ -22,9 +22,11 @@ const List<String> subCategoryEducation = [
 const List<String> subCategoryFinance = [
   '',
   'bank_account',
+  'current_account',
   'credit_card',
   'debit_card',
-  'tax_id'
+  'investment_account',
+  'saving_account'
 ];
 
 const List<String> subCategoryGovernment = [
