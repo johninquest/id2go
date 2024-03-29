@@ -27,8 +27,7 @@ class AuthPage extends StatelessWidget {
             Container(
                 margin:
                     const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
-                child: const Text(
-                    'Pocket your ID numbers, unlock your freedom!',
+                child: const Text('Pocket your IDs, unlock your freedom!',
                     /* 'Pocket your ID numbers, unlock your freedom!', */
                     textAlign: TextAlign.center,
                     style: TextStyle(
