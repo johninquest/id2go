@@ -23,6 +23,7 @@ class AppInfoPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          /*  const Text('GoID: Access your essentials, anytime, anywhere.'), */
           const VersionInfo(),
           const SizedBox(
             height: 8.0,
