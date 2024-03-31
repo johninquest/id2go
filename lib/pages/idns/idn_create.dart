@@ -150,7 +150,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: TextFormField(
                       controller: idNumber,
                       decoration: const InputDecoration(
-                          labelText: 'ID Number',
+                          labelText: 'ID or Number',
+                          hintText: 'Enter corresponding ID or Number"',
                           labelStyle: TextStyle(color: primaryColor)),
                       style: const TextStyle(color: txtBlackColor),
                       keyboardType: TextInputType.text,
@@ -259,6 +260,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
       idTypeList = subCategoryGovernment;
     } else if (selectedCategory == 'insurance') {
       idTypeList = subCategoryInsurance;
+    } else if (selectedCategory == 'professional') {
+      idTypeList = subCategoryProfessional;
     } else if (selectedCategory == 'socialmedia') {
       idTypeList = subCategorySocialMedia;
     } else if (selectedCategory == 'subscription') {

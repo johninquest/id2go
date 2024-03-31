@@ -17,15 +17,19 @@ const List<String> subCategoryEducation = [
   '',
   'library_card',
   'student_id_card',
+  'student_union_card',
+  'european_student_card',
+  'other'
 ];
 
 const List<String> subCategoryFinance = [
   '',
-  'bank_account',
+  'brokerage_account',
   'current_account',
   'credit_card',
   'debit_card',
   'investment_account',
+  'other_bank_account',
   'saving_account'
 ];
 
@@ -36,7 +40,8 @@ const List<String> subCategoryGovernment = [
   'passport',
   'residence_permit',
   'tax_id',
-  'social_security_number'
+  'tax_number',
+  'social_security'
 ];
 
 const List<String> subCategoryInsurance = [
@@ -55,6 +60,14 @@ const List<String> subCategoryInsurance = [
   'other'
 ];
 
+const List<String> subCategoryProfessional = [
+  '',
+  'employee_id',
+  'conference_id',
+  'event_id',
+  'other'
+];
+
 const List<String> subCategoryTravel = [
   '',
   'bus_ticket',
@@ -68,8 +81,9 @@ const List<String> subCategoryOthers = [
   'email',
   'social_media',
   'username',
-  'url',
+  'website',
   'shopping',
+  'other'
 ];
 
 const List<String> subCategorySocialMedia = [
@@ -83,6 +97,7 @@ const List<String> subCategorySocialMedia = [
   'tiktok',
   'twitter',
   'wechat',
+  'x',
   'other'
 ];
 
@@ -108,29 +123,3 @@ const List<String> subCategorySubscription = [
   'wellness',
   'other'
 ];
-/* 
-const List<String> idTypeList = [
-  '',
-  'bank account',
-  'debit card',
-  'credit card',
-  'drivers',
-  'financial',
-  'government',
-  'health',
-  'identification',
-  'insurance',
-  'personal',
-  'membership',
-  'national',
-  'passport',
-  'health',
-  'tax',
-  'transport',
-  'travel',
-  'shopping',
-  'student',
-  'work',
-  'other',
-];
-*/

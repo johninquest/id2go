@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:idwallet/shared/custom_components.dart';
+import '../../shared/custom_wigets.dart';
 import '../../style/colors.dart';
 import '../../utils/db/sp_helper.dart';
 import 'dart:convert';
-import '../../shared/lists/countries.dart';
+/* import '../../shared/lists/countries.dart';
 import '../../style/colors.dart';
-import '../../utils/date_time_helper.dart';
+import '../../utils/date_time_helper.dart'; */
 
 class UserPage extends StatelessWidget {
   const UserPage({super.key});
@@ -73,58 +73,6 @@ class UserPage extends StatelessWidget {
                 child: const Icon(Icons.add)),
           );
         });
-  }
-}
-
-class UserInformation extends StatelessWidget {
-  const UserInformation({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const UserInfoRow(
-            fieldTitle: 'First name',
-            fieldValue: 'Mike',
-          ),
-          /*  const Divider(
-            indent: 89.0,
-            endIndent: 89.0,
-          ), */
-          const UserInfoRow(
-            fieldTitle: 'Last name',
-            fieldValue: 'Xaver',
-          ),
-          const SizedBox(
-            height: 8.0,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: const EdgeInsets.all(10.0),
-                child: ElevatedButton(
-                  onPressed: () => debugPrint('Tapped delete button'),
-                  style: ElevatedButton.styleFrom(),
-                  child: const Text(
-                    'DELETE',
-                    style: TextStyle(color: txtBlackColor),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10.0),
-                child: ElevatedButton(
-                  onPressed: () => debugPrint('Tapped edit button'),
-                  child:
-                      const Text('EDIT', style: TextStyle(color: primaryColor)),
-                ),
-              )
-            ],
-          )
-        ]);
   }
 }
 
