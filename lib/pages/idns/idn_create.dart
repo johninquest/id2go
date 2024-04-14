@@ -25,15 +25,15 @@ class IdCreateForm extends StatefulWidget {
 
 class _IdCreateFormState extends State<IdCreateForm> {
   final idCreateFormKey = GlobalKey<FormState>();
-  String? idCategory;
-  String? idType;
+  String? _idCategory = '';
+  String? _idType = '';
   final TextEditingController idName = TextEditingController();
   final TextEditingController idNumber = TextEditingController();
   final TextEditingController idValidFrom = TextEditingController();
   final TextEditingController idValidTo = TextEditingController();
   final TextEditingController idComment = TextEditingController();
-  final idCategoryList = idnCategory;
-  static List<String> idTypeList = [];
+  // final idCategoryList = idnCategory;
+  late List<String> idTypeList = [];
 
   DateTime selectedDate = DateTime.now();
   Future<void> _selectStartDate(BuildContext context) async {
@@ -76,52 +76,48 @@ class _IdCreateFormState extends State<IdCreateForm> {
                 Container(
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: DropdownButtonFormField(
+                    child: DropdownButtonFormField<String>(
+                      key: const ValueKey(1),
                       decoration: const InputDecoration(
                           labelText: 'ID Category',
                           labelStyle: TextStyle(color: primaryColor)),
-                      items: idCategoryList.map((String value) {
+                      items: idCategoryList.map((String item) {
                         return DropdownMenuItem<String>(
-                          value: value,
+                          value: item.toString(),
                           child: Text(
-                            value,
+                            item.toString(),
                             style: const TextStyle(color: txtBlackColor),
                           ),
                         );
                       }).toList(),
                       validator: (val) => val == null ? 'ID category ?' : null,
                       onChanged: (val) => setState(() {
-                        idCategory = val as String;
-
-                        _setIdTypeList(val);
+                        _idCategory = val.toString();
+                        _setIdTypeList2(val);
                       }),
                     )),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: DropdownButtonFormField(
+                    child: DropdownButtonFormField<String>(
+                      key: const ValueKey(2),
                       decoration: const InputDecoration(
                           labelText: 'ID Type',
                           labelStyle: TextStyle(color: primaryColor)),
-                      items: idTypeList.isEmpty
-                          ? [
-                              const DropdownMenuItem(
-                                value: '',
-                                child: Text('Select Type'),
-                              ),
-                            ]
-                          : idTypeList.map((String item) {
+                      items: _setIdTypeList2(_idCategory).isNotEmpty
+                          ? _setIdTypeList2(_idCategory).map((String item) {
                               return DropdownMenuItem<String>(
-                                value: item,
+                                value: item.toString(),
                                 child: Text(
-                                  item,
+                                  item.toString(),
                                   style: const TextStyle(color: txtBlackColor),
                                 ),
                               );
-                            }).toList(),
+                            }).toList()
+                          : null,
                       validator: (val) => val == null ? 'ID Type ?' : null,
                       onChanged: (val) => setState(() {
-                        idType = val as String;
+                        _idType = val.toString();
                       }),
                     )),
                 Container(
@@ -250,26 +246,60 @@ class _IdCreateFormState extends State<IdCreateForm> {
         ));
   }
 
-  void _setIdTypeList(String selectedCategory) {
+  void _setIdTypeList(String? selectedCategory) {
+    if (selectedCategory != null) {
+      if (selectedCategory == 'education') {
+        setState(() {
+          idTypeList = subCategoryEducation;
+        });
+      } else if (selectedCategory == 'finance') {
+        setState(() {
+          idTypeList = subCategoryFinance;
+        });
+      } else if (selectedCategory == 'government') {
+        setState(() {
+          idTypeList = subCategoryGovernment;
+        });
+      } else if (selectedCategory == 'insurance') {
+        setState(() {
+          idTypeList = subCategoryInsurance;
+        });
+      } else if (selectedCategory == 'professional') {
+        setState(() {
+          idTypeList = subCategoryProfessional;
+        });
+      } else if (selectedCategory == 'socialmedia') {
+        setState(() {
+          idTypeList = subCategorySocialMedia;
+        });
+      } else if (selectedCategory == 'subscription') {
+        setState(() {
+          idTypeList = subCategorySubscription;
+        });
+      } else if (selectedCategory == 'travel') {
+        setState(() {
+          idTypeList = subCategoryTravel;
+        });
+      } else if (selectedCategory == 'utilities') {
+        setState(() {
+          idTypeList = subCategoryUtilities;
+        });
+      }
+    }
     // idTypeList = [];
-    if (selectedCategory == 'education') {
-      idTypeList = subCategoryEducation;
-    } else if (selectedCategory == 'finance') {
-      idTypeList = subCategoryFinance;
-    } else if (selectedCategory == 'government') {
-      idTypeList = subCategoryGovernment;
-    } else if (selectedCategory == 'insurance') {
-      idTypeList = subCategoryInsurance;
-    } else if (selectedCategory == 'professional') {
-      idTypeList = subCategoryProfessional;
-    } else if (selectedCategory == 'socialmedia') {
-      idTypeList = subCategorySocialMedia;
-    } else if (selectedCategory == 'subscription') {
-      idTypeList = subCategorySubscription;
-    } else if (selectedCategory == 'travel') {
-      idTypeList = subCategoryTravel;
-    } else if (selectedCategory == 'utilities') {
-      idTypeList = subCategoryUtilities;
+  }
+
+  List<String> _setIdTypeList2(String? cat) {
+    if (cat != null) {
+      if (cat == 'education') {
+        return ['a', 'b', 'c'];
+      } else if (cat == 'finance') {
+        return ['x', 'y', 'z'];
+      } else {
+        return [''];
+      }
+    } else {
+      return [''];
     }
   }
 }

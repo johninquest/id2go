@@ -1,4 +1,4 @@
-const List<String> idnCategory = [
+const List<String> idCategoryList = [
   '',
   'education',
   'finance',
