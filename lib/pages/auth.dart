@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../shared/bottom_nav_bar.dart';
 import '../../style/colors.dart';
 
 class AuthPage extends StatelessWidget {
@@ -61,6 +62,7 @@ class AuthPage extends StatelessWidget {
           ],
         ),
       ),
+      /* bottomNavigationBar: const BottomNavBar(), */
     );
   }
 }
