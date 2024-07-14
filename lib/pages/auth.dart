@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../../shared/bottom_nav_bar.dart';
 import '../../style/colors.dart';
 
 class AuthPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class AuthPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'GoID',
+          'PockID',
           style: TextStyle(
               color: primaryColor,
               letterSpacing: 1.0,
@@ -61,6 +62,7 @@ class AuthPage extends StatelessWidget {
           ],
         ),
       ),
+      /* bottomNavigationBar: const BottomNavBar(), */
     );
   }
 }

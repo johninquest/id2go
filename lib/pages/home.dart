@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'idns/idn_create.dart';
-import 'idns/idn_list.dart';
+import 'ids/id_create.dart';
+import 'ids/id_list.dart';
 import '../../shared/left_menu.dart';
 import '../style/colors.dart';
 

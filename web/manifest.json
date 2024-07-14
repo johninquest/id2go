@@ -1,11 +1,11 @@
 {
-  "name": "GoID Wallet",
-  "short_name": "GoID",
+  "name": "PockID",
+  "short_name": "PockID",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
   "theme_color": "#0175C2",
-  "description": "Your ID numbers, Always with you",
+  "description": "Pocket Your IDs, Unlock Your Freedom",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [

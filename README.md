@@ -11,18 +11,20 @@
 - Implement auth
 
 <!--
-This project is a starting point for a Flutter application.
+# Name 
+- PockID 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-- [Firebase setup for flutter](https://firebase.google.com/docs/flutter/setup?hl=en&platform=android)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-How to add firebase to fultter -> https://github.com/firebase/flutterfire?tab=readme-ov-file
+# Catchprases
+"Your IDs, Your Way: Access Made Easy!"
+"Unlock Your Essentials in a Snap!"
+"Never Fumble for Your IDs Again!"
+"ID Management, Simplified."
+"Get to Your Important Numbers in Seconds!"
+"Effortless Access to Your Vital Information!"
+"Your IDs, Always at Your Fingertips."
+"Say Goodbye to Digging Through Files!"
+"Streamline Your Life with Quick ID Retrieval!"
+"Instant Access to Your Essential Info, Anytime, Anywhere!"
 -->
 
 ## Other notes
