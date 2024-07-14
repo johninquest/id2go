@@ -25,8 +25,8 @@ class IdCreateForm extends StatefulWidget {
 
 class _IdCreateFormState extends State<IdCreateForm> {
   final idCreateFormKey = GlobalKey<FormState>();
-  String? _idCategory = '';
-  String? _idType = '';
+  String? idCategory;
+  String? idType;
   final TextEditingController idName = TextEditingController();
   final TextEditingController idNumber = TextEditingController();
   final TextEditingController idValidFrom = TextEditingController();
@@ -78,6 +78,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField<String>(
                       key: const ValueKey(1),
+                      value: idCategory,
                       decoration: const InputDecoration(
                           labelText: 'ID Category',
                           labelStyle: TextStyle(color: primaryColor)),
@@ -92,32 +93,32 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       }).toList(),
                       validator: (val) => val == null ? 'ID category ?' : null,
                       onChanged: (val) => setState(() {
-                        _idCategory = val.toString();
-                        _setIdTypeList2(val);
+                        idCategory = val.toString();
+                        idType = null;
+                        idTypeList = updateIdTypeList(val);
                       }),
                     )),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.9,
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                    child: DropdownButtonFormField<String>(
+                    child: DropdownButtonFormField(
                       key: const ValueKey(2),
+                      value: idType,
                       decoration: const InputDecoration(
                           labelText: 'ID Type',
                           labelStyle: TextStyle(color: primaryColor)),
-                      items: _setIdTypeList2(_idCategory).isNotEmpty
-                          ? _setIdTypeList2(_idCategory).map((String item) {
-                              return DropdownMenuItem<String>(
-                                value: item.toString(),
-                                child: Text(
-                                  item.toString(),
-                                  style: const TextStyle(color: txtBlackColor),
-                                ),
-                              );
-                            }).toList()
-                          : null,
+                      items: updateIdTypeList(idCategory).map((String item) {
+                        return DropdownMenuItem<String>(
+                          value: item.toString(),
+                          child: Text(
+                            item.toString(),
+                            style: const TextStyle(color: txtBlackColor),
+                          ),
+                        );
+                      }).toList(),
                       validator: (val) => val == null ? 'ID Type ?' : null,
                       onChanged: (val) => setState(() {
-                        _idType = val.toString();
+                        idType = val.toString();
                       }),
                     )),
                 Container(
@@ -134,7 +135,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       textCapitalization: TextCapitalization.sentences,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Issuer ?';
+                          return 'Issuer?';
                         }
                         return null;
                       },
@@ -146,8 +147,8 @@ class _IdCreateFormState extends State<IdCreateForm> {
                     child: TextFormField(
                       controller: idNumber,
                       decoration: const InputDecoration(
-                          labelText: 'ID or Number',
-                          hintText: 'Enter corresponding ID or Number"',
+                          labelText: 'ID/Number',
+                          hintText: 'Enter ID/Number"',
                           labelStyle: TextStyle(color: primaryColor)),
                       style: const TextStyle(color: txtBlackColor),
                       keyboardType: TextInputType.text,
@@ -188,8 +189,9 @@ class _IdCreateFormState extends State<IdCreateForm> {
                         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: TextFormField(
                           controller: idValidTo,
-                          decoration:
-                              const InputDecoration(labelText: 'Valid to'),
+                          decoration: const InputDecoration(
+                              labelText: 'Valid to',
+                              labelStyle: TextStyle(color: primaryColor)),
                           style: const TextStyle(color: txtBlackColor),
                           keyboardType: TextInputType.text,
                           textCapitalization: TextCapitalization.sentences,
@@ -246,50 +248,31 @@ class _IdCreateFormState extends State<IdCreateForm> {
         ));
   }
 
-  void _setIdTypeList(String? selectedCategory) {
-    if (selectedCategory != null) {
-      if (selectedCategory == 'education') {
-        setState(() {
-          idTypeList = subCategoryEducation;
-        });
-      } else if (selectedCategory == 'finance') {
-        setState(() {
-          idTypeList = subCategoryFinance;
-        });
-      } else if (selectedCategory == 'government') {
-        setState(() {
-          idTypeList = subCategoryGovernment;
-        });
-      } else if (selectedCategory == 'insurance') {
-        setState(() {
-          idTypeList = subCategoryInsurance;
-        });
-      } else if (selectedCategory == 'professional') {
-        setState(() {
-          idTypeList = subCategoryProfessional;
-        });
-      } else if (selectedCategory == 'socialmedia') {
-        setState(() {
-          idTypeList = subCategorySocialMedia;
-        });
-      } else if (selectedCategory == 'subscription') {
-        setState(() {
-          idTypeList = subCategorySubscription;
-        });
-      } else if (selectedCategory == 'travel') {
-        setState(() {
-          idTypeList = subCategoryTravel;
-        });
-      } else if (selectedCategory == 'utilities') {
-        setState(() {
-          idTypeList = subCategoryUtilities;
-        });
-      }
+  List<String> updateIdTypeList(String? selectedCategory) {
+    if (selectedCategory == 'education') {
+      return subCategoryEducation;
+    } else if (selectedCategory == 'finance') {
+      return subCategoryFinance;
+    } else if (selectedCategory == 'government') {
+      return subCategoryGovernment;
+    } else if (selectedCategory == 'insurance') {
+      return subCategoryInsurance;
+    } else if (selectedCategory == 'professional') {
+      return subCategoryProfessional;
+    } else if (selectedCategory == 'socialmedia') {
+      return subCategorySocialMedia;
+    } else if (selectedCategory == 'subscription') {
+      return subCategorySubscription;
+    } else if (selectedCategory == 'travel') {
+      return subCategoryTravel;
+    } else if (selectedCategory == 'utilities') {
+      return subCategoryUtilities;
+    } else {
+      return [];
     }
-    // idTypeList = [];
   }
 
-  List<String> _setIdTypeList2(String? cat) {
+  /* List<String> _setIdTypeList2(String? cat) {
     if (cat != null) {
       if (cat == 'education') {
         return ['a', 'b', 'c'];
@@ -301,5 +284,5 @@ class _IdCreateFormState extends State<IdCreateForm> {
     } else {
       return [''];
     }
-  }
+  } */
 }

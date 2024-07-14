@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../shared/bottom_nav_bar.dart';
+// import '../../shared/bottom_nav_bar.dart';
 import '../../style/colors.dart';
 
 class AuthPage extends StatelessWidget {
@@ -14,7 +14,7 @@ class AuthPage extends StatelessWidget {
           'PockID',
           style: TextStyle(
               color: primaryColor,
-              letterSpacing: 1.0,
+              letterSpacing: 3.0,
               fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -28,14 +28,13 @@ class AuthPage extends StatelessWidget {
             Container(
                 margin:
                     const EdgeInsets.only(bottom: 13.0, left: 8.0, right: 8.0),
-                child: const Text('Pocket your IDs, unlock your freedom!',
+                child: const Text('Pocket your IDs, unlock your freedom',
                     /* 'Pocket your ID numbers, unlock your freedom!', */
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        wordSpacing: 5.0,
+                        wordSpacing: 3.0,
                         letterSpacing: 1.0,
-                        color: primaryColor))),
+                        fontWeight: FontWeight.bold))),
             const SizedBox(
               height: 13.0,
             ),

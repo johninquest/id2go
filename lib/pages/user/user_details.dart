@@ -62,16 +62,26 @@ class UserPage extends StatelessWidget {
               ),
             );
           } else if (snapshot.hasError) {
-            return Center(
-              child: Text('Error: ${snapshot.error}'),
+            return Scaffold(
+              appBar: AppBar(title: const Text('User info'), centerTitle: true),
+              body: Center(
+                child: Text('Error: ${snapshot.error}'),
+              ),
             );
           }
-          return Center(
-            // child: CircularProgressIndicator(),
+          return Scaffold(
+            appBar: AppBar(title: const Text('User info'), centerTitle: true),
+            body: Center(
+                child: ElevatedButton(
+                    onPressed: () => context.push('/user-create'),
+                    child: const Icon(Icons.add))),
+          );
+          /* Center(
+            /* child: CircularProgressIndicator(), */
             child: ElevatedButton(
                 onPressed: () => context.push('/user-create'),
                 child: const Icon(Icons.add)),
-          );
+          ); */
         });
   }
 }

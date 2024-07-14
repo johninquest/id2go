@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
         /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
-        textTheme: GoogleFonts.poppinsTextTheme(),
+        textTheme: GoogleFonts.workSansTextTheme(),
         // home: const AuthPage(),
       ),
     );
