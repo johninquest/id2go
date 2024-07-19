@@ -218,7 +218,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: const EdgeInsets.all(10.0),
+                      margin: const EdgeInsets.all(8.0),
                       child: ElevatedButton(
                         onPressed: () => Navigator.of(context).pop(),
                         /* onPressed: () => debugPrint('Tapped cancel button'), */
@@ -230,7 +230,7 @@ class _IdCreateFormState extends State<IdCreateForm> {
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.all(10.0),
+                      margin: const EdgeInsets.all(8.0),
                       child: ElevatedButton(
                         onPressed: () {
                           debugPrint('Tapped save button');
@@ -271,18 +271,4 @@ class _IdCreateFormState extends State<IdCreateForm> {
       return [];
     }
   }
-
-  /* List<String> _setIdTypeList2(String? cat) {
-    if (cat != null) {
-      if (cat == 'education') {
-        return ['a', 'b', 'c'];
-      } else if (cat == 'finance') {
-        return ['x', 'y', 'z'];
-      } else {
-        return [''];
-      }
-    } else {
-      return [''];
-    }
-  } */
 }

@@ -15,13 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: pageRouter,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       /* title: 'Flutter Demo', */
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
         /*  fontFamily: GoogleFonts.quicksand().fontFamily, */
-        textTheme: GoogleFonts.workSansTextTheme(),
+        textTheme: GoogleFonts.montserratTextTheme(),
         // home: const AuthPage(),
       ),
     );

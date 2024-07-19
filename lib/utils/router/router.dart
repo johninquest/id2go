@@ -9,15 +9,8 @@ import '../../pages/storage.dart';
 import '../../pages/user/user_create.dart';
 import '../../pages/user/user_details.dart';
 
-/* class PageRouter {
-  void navigateToPage(Widget widgetName, BuildContext widgetContext) {
-    Navigator.of(widgetContext)
-        .push(MaterialPageRoute(builder: (context) => widgetName));
-  }
-} */
-
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
+// final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter pageRouter = GoRouter(
     navigatorKey: _rootNavigatorKey,
@@ -61,3 +54,13 @@ final GoRouter pageRouter = GoRouter(
         builder: (context, state) => const StorageSettingPage(),
       ),
     ]);
+
+
+/* 
+class PageRouter {
+  void navigateToPage(Widget widgetName, BuildContext widgetContext) {
+    Navigator.of(widgetContext)
+        .push(MaterialPageRoute(builder: (context) => widgetName));
+  }
+} 
+*/
